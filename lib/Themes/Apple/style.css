@@ -1,0 +1,96 @@
+@charset "UTF-8";
+:root {
+  --text-color: #fff;
+  --icon-color: #FFF;
+}
+
+@font-face {
+  font-family: 'San Francisco';
+  src: url("/apebar/assets/fonts/SanFranciscoDisplay-Bold.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'San Francisco';
+  src: url("/apebar/assets/fonts/SanFranciscoDisplay-Regular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'San Francisco Semibold';
+  src: url("/apebar/assets/fonts/SanFranciscoDisplay-Semibold.otf");
+  font-weight: normal;
+}
+
+#apebar-index-coffee {
+  font-family: San Francisco Semibold;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  height: 22px;
+  line-height: 22px;
+  font-size: 15px;
+}
+
+#apebar-index-coffee > div > div {
+  display: inline-block;
+  text-align: left;
+  padding: 0 10px;
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+#apebar-index-coffee .left {
+  padding-left: 15px;
+  float: left;
+}
+
+#apebar-index-coffee .center {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+#apebar-index-coffee .right {
+  padding-right: 15px;
+  float: right;
+}
+
+/*
+  WIDGETS
+*/
+#apebar-Battery .battery-icon {
+  margin-right: 5px;
+  height: 1.2em;
+  vertical-align: sub;
+  fill: var(--icon-color);
+}
+
+#apebar-Battery .percentage:after {
+  content: "%";
+}
+
+#apebar-Spaces span {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+}
+
+#apebar-Spaces span.current {
+  color: black;
+  background: white;
+}
+
+#apebar-CurrentApplication {
+  font-family: San Francisco;
+}
+
+#apebar-CurrentApplication .window-application {
+  font-weight: bold;
+}
+
+#apebar-CurrentApplication .window-application:after {
+  margin: 0 8px;
+  content: '•';
+}

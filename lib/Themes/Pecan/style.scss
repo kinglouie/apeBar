@@ -1,0 +1,139 @@
+:root {
+  --text-color: #FFD;
+  --icon-color: #FFF;
+}
+
+
+#apebar-index-coffee {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
+  color: var(--text-color);
+  height: 35px;
+  line-height: 35px;
+  font-size: 19px;
+
+  > .position > div {
+    display: inline-block;
+    padding:0 10px;
+    -webkit-transform: translate3d(0, 0, 0);
+    &:before,
+    span:before
+    {
+      color: var(--icon-color);
+    }
+  }
+
+  .left {
+    float:left;
+  }
+  .center {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+  }
+  .right {
+    float:right;
+  }
+}
+
+/*
+  WIDGETS
+*/
+
+
+#apebar-Spaces {
+  span {
+    display: inline-block;
+    width:25px;
+    height:35px;
+    text-align: center;
+    &.current {
+      color: black;
+      background: rgba(255,255,255,.9);
+    }
+  }
+}
+
+#apebar-CurrentApplication {
+  .window-application {
+    font-weight: bold;
+    &:after {
+      margin: 0 8px;
+      content: '•';
+    }
+  }
+}
+
+#apebar-Battery {
+  .battery-icon {
+    margin-right: 5px;
+    height:1.2em;
+    vertical-align: sub;
+    fill: var(--icon-color);
+  }
+  .percentage:after {
+    content:"%";
+  }
+}
+
+#apebar-Cpu {
+  svg {
+    height:1.2em;
+    fill: white;
+    margin-right: 5px;
+    position: relative;
+    top:3px;
+  }
+  .percentage {
+    display: inline-block;
+    min-width: 60px;
+    &:after {
+      content: "%";
+    }
+  }
+}
+
+#apebar-Bandwidth {
+  .down:before,
+  .up:before {
+    font-family: 'Font Awesome 5 Free';
+    margin-right:10px;
+    line-height:1em;
+  }
+  .down {
+    display: inline-block;
+    margin-right: 9px;
+    min-width: 100px;
+    &:before {
+      content: "\f063";
+    }
+  }
+  .up {
+    display: inline-block;
+    min-width: 100px;
+    &:before {
+      content: "\f062";
+    }
+  }
+}
+
+#apebar-Memory {
+  svg {
+    height:1.1em;
+    fill: white;
+    margin-right: 5px;
+    position: relative;
+    top:2px;
+  }
+  &:after {
+    content: "%";
+  }
+}
+
+#apebar-Wifi {
+  &:before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f1eb";
+    margin-right:10px;
+  }
+}
+
