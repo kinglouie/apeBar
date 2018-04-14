@@ -9,7 +9,7 @@ Widget = require '../../Widget.coffee'
 
 module.exports = class Bandwidth extends Widget
 
-  refreshFrequency: 5000
+  refreshFrequency: 2500
 
   commands =
     down: "/usr/local/bin/ifstat -n -z -i en0 -S 1 1 | awk 'FNR == 3 {print $2}'"

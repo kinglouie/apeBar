@@ -5,11 +5,22 @@
 #  (at your option) any later version. See <http://www.gnu.org/licenses/> for
 #  details.
 
+widgets = require './Widgets/index.coffee'
+
 module.exports = class Theme
 
-  constructor: (cfg, widgets) ->
+  constructor: (cfg) ->
     @cfg = cfg
-    @widgets = widgets
+    @widgets = {}
+
+    # set/init active widgets
+    for position, widget_list of cfg.widgets
+      for widget in widget_list
+        widgetName = if typeof widget is 'string' then widget else widget.name
+        @widgets[widget] = new widgets[widgetName]()
+        #if widget of cfg.widget_refresh_frequency
+        #  activeWidgets[widget].refreshFrequency = cfg.widget_refresh_frequency[widget]
+
     @init()
     if @cfg.top?
       @top = @cfg.top
@@ -22,17 +33,21 @@ module.exports = class Theme
 
   init: ->
 
+  run: ->
+    for widget_name, widget of @widgets
+      frequency = if widget.refreshFrequency? then widget.refreshFrequency else widget::refreshFrequency
+      if Date.now() >= widget.lastRun + frequency
+        widget.run()
+
   render: ->
     html = ""
-    for position, widgets_list of @cfg.widgets
-      for widget in widgets_list
-        html += @widgets[widget].render()
+    for widget_name, widget of @widgets
+        html += widget.render()
     return html
 
   afterRender: (domEl) ->
 
   update: ->
-    for position, widgets_list of @cfg.widgets
-      for widget in widgets_list
-        if @widgets[widget].needsUpdate
-          @widgets[widget].update()
+    for widget_name, widget of @widgets
+      if widget.needsUpdate
+        widget.update()

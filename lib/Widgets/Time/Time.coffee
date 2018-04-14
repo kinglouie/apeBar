@@ -9,4 +9,6 @@ Widget = require '../../Widget.coffee'
 
 module.exports = class Time extends Widget
 
+  refreshFrequency: 5000
+
   command: "date +\"%H:%M\""

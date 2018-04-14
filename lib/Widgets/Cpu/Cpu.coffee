@@ -9,6 +9,8 @@ Widget = require '../../Widget.coffee'
 
 module.exports = class Cpu extends Widget
 
+  refreshFrequency: 2500
+
   command: "ESC=`printf \"\e\"`; ps -A -o %cpu | awk '{s+=$1} END {printf(\"%.2f\",s/8);}'"
 
   afterRun: ->

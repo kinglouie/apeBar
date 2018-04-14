@@ -10,6 +10,8 @@ run = require 'run'
 
 module.exports = class Spaces extends Widget
 
+  refreshFrequency: 500
+
   command: "apebar/lib/Widgets/Spaces/bin/DisplaySpaces"
 
   init: ->

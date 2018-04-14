@@ -1,38 +1,32 @@
 {
 
-  "themes": {
-
-    "default": {
-      "name": "Pecan",
-      "config": {
-        "widgets": {
-          "left": ["CurrentApplication"],
-          "center": ["Spaces"],
-          "right": ["Bandwidth", "Cpu", "Memory", "Battery", "Date", "Time"]
-        }
-      }
-    },
-
-    "display_width < 3000px": {
-      "name": "Apple",
-      "config": {
-        "widgets": {
-          "left": ["CurrentApplication"],
-          "center": ["Spaces"],
-          "right": ["Battery", "Date", "Time"]
-        }
-      }
+  "default": {
+    "name": "Pecan",
+    "widgets": {
+      "left": [
+        {"name": "CurrentApplication", "max_title_length": 250 }
+      ],
+      "center": [
+        "Spaces"
+      ],
+      "right": [
+        "Bandwidth", 
+        "Cpu", 
+        "Memory", 
+        "Battery", 
+        "Date", 
+        "Time"
+      ]
     }
   },
 
-  "widget_refresh_frequency": {
-    "Battery": 10000,
-    "Cpu": 2500,
-    "Bandwidth": 2500,
-    "Time": 5000,
-    "Date": 60000,
-    "Wifi": 60000,
-    "Spaces": 500,
-    "Memory": 20000
+  "display_width < 3000px": {
+    "name": "Apple",
+    "widgets": {
+      "left": ["CurrentApplication"],
+      "center": ["Spaces"],
+      "right": ["Battery", "Date", "Time"]
+    }
   }
+
 }

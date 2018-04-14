@@ -17,7 +17,6 @@ module.exports = class Widget
     @value = ""
     @needsUpdate = false
     @lastRun = 0
-    @refreshFrequency = 0
     @name = @constructor.name
     @init()
 

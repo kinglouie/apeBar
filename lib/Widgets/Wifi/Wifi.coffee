@@ -9,4 +9,6 @@ Widget = require '../../Widget.coffee'
 
 module.exports = class Wifi extends Widget
 
+  refreshFrequency: 60000
+
   command: "networksetup -getairportnetwork en0 | cut -c 24-"

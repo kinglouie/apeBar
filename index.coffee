@@ -11,11 +11,8 @@ themes = require './lib/Themes/index.coffee'
 
 cfg = null
 theme = null
-activeWidgets = {}
 
 refreshFrequency: 500
-
-
 
 init: ->
   if !@initialized
@@ -23,29 +20,19 @@ init: ->
     cfg = apebar.getJson "./apebar/config.json"
 
     # match theme configuration
-    matchedThemeConfiguration = apebar.matchTheme cfg.themes
-    themeName = cfg.themes[matchedThemeConfiguration].name
-    themeCfg = cfg.themes[matchedThemeConfiguration].config
-
-    # set/init active widgets
-    for position, widget_list of themeCfg.widgets
-      for widget in widget_list
-        activeWidgets[widget] = new widgets[widget]()
-        if widget of cfg.widget_refresh_frequency
-          activeWidgets[widget].refreshFrequency = cfg.widget_refresh_frequency[widget]
+    matchedThemeConfiguration = apebar.matchTheme cfg
+    themeName = cfg[matchedThemeConfiguration].name
+    themeCfg = cfg[matchedThemeConfiguration]
 
     # set/init theme
     if themeName of themes
-      theme = new themes[themeName](themeCfg, activeWidgets)
+      theme = new themes[themeName](themeCfg)
 
     @initialized = true
 
 command: (callback) ->
   @init()
-  for widget_name, widget of activeWidgets
-    if Date.now() >= widget.lastRun + widget.refreshFrequency
-      widget.run()
-
+  theme.run()
   callback()
 
 render: ->

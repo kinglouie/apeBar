@@ -9,4 +9,6 @@ Widget = require '../../Widget.coffee'
 
 module.exports = class Memory extends Widget
 
+  refreshFrequency: 10000
+
   command: "ESC=`printf \"\e\"`; ps -A -o %mem | awk '{s+=$1} END {print \"\" s}'"

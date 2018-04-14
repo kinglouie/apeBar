@@ -11,6 +11,8 @@ MAX_LENGTH = 80
 
 module.exports = class CurrentApplication extends Widget
 
+  refreshFrequency: 500
+
   commands =
     app: "/usr/local/bin/chunkc tiling::query -w owner"
     title:  "/usr/local/bin/chunkc tiling::query -w name"

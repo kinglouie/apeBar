@@ -9,4 +9,6 @@ Widget = require '../../Widget.coffee'
 
 module.exports = class Date extends Widget
 
+  refreshFrequency: 60000
+
   command: "LC_ALL=de_DE date +\"%a %d %b.\""

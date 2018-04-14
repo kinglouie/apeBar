@@ -9,6 +9,8 @@ Widget = require '../../Widget.coffee'
 
 module.exports = class Battery extends Widget
 
+  refreshFrequency: 10000
+
   command: "sh apebar/lib/Widgets/Battery/bin/battery.sh"
 
   init: ->
