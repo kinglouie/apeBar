@@ -9,9 +9,15 @@ widgets = require './Widgets/index.coffee'
 
 module.exports = class Theme
 
+  top: 0
+  right: 0
+  bottom: null
+  left: 0
+  
   constructor: (cfg) ->
     @cfg = cfg
     @widgets = {}
+    @themeName = @constructor.name
 
     # set/init active widgets
     for position, widget_list of cfg.widgets
@@ -22,13 +28,14 @@ module.exports = class Theme
         #  activeWidgets[widget].refreshFrequency = cfg.widget_refresh_frequency[widget]
 
     @init()
-    if @cfg.top?
+
+    if "top" of @cfg
       @top = @cfg.top
-    if @cfg.left?
+    if "left" of @cfg
       @left = @cfg.left
-    if @cfg.bottom?
+    if "bottom" of @cfg
       @bottom = @cfg.bottom
-    if @cfg.right?
+    if "right" of @cfg
       @right = @cfg.right
 
   init: ->
@@ -46,8 +53,16 @@ module.exports = class Theme
     return html
 
   afterRender: (domEl) ->
+    if @top?
+      $(domEl).css "top", @top
+    if @bottom?
+      $(domEl).css "bottom", @bottom
+    if @left?
+      $(domEl).css "left", @left
+    if @right?
+      $(domEl).css "right", @right
 
-  update: ->
+  update: (domEl) ->
     for widget_name, widget of @widgets
       if widget.needsUpdate
-        widget.update()
+        widget.update(domEl)

@@ -25,8 +25,8 @@ module.exports = class Battery extends Widget
 
   render: ->
     """
-      <div id="apebar-#{@name}">#{@value.percentage}</div>
+      <div class="widget-#{@name}">#{@value.percentage}</div>
     """
 
-  update: ->
-    $("#apebar-#{@name}").html @value.percentage
+  update: (domEl) ->
+    $(domEl).find(".widget-#{@name}").html @value.percentage

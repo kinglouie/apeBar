@@ -1,27 +1,37 @@
 {
 
-  "default": {
-    "name": "Pecan",
-    "widgets": {
-      "left": [
-        {"name": "CurrentApplication", "max_title_length": 250 }
-      ],
-      "center": [
-        "Spaces"
-      ],
-      "right": [
-        "Bandwidth", 
-        "Cpu", 
-        "Memory", 
-        "Battery", 
-        "Date", 
-        "Time"
-      ]
+  "default": [
+    {
+      "theme": "Apple",
+      "widgets": {
+        "left": [{"name": "CurrentApplication", "max_title_length": 250 }],
+        "center": ["Spaces"],
+        "right": ["Date", "Time"]
+      }
+    },
+    {
+      "theme": "Pecan",
+      "top": null,
+      "bottom": 32,
+      "widgets": {
+        "left": [
+          "Bandwidth"
+        ],
+        "center": [
+  
+        ],
+        "right": [
+          
+          "Cpu", 
+          "Memory", 
+          "Battery"
+        ]
+      }
     }
-  },
+  ],
 
   "display_width < 3000px": {
-    "name": "Apple",
+    "theme": "Apple",
     "widgets": {
       "left": ["CurrentApplication"],
       "center": ["Spaces"],

@@ -34,8 +34,8 @@ module.exports = class Widget
 
   render: ->
     """
-      <div id="apebar-#{@name}">#{@value}</div>
+      <div class="widget-#{@name}">#{@value}</div>
     """
 
-  update: ->
-    $("#apebar-#{@name}").html @value
+  update:  (domEl) ->
+    $(domEl).find(".widget-#{@name}").html @value

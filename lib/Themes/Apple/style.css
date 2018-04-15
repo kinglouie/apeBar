@@ -22,75 +22,72 @@
   font-weight: normal;
 }
 
-#apebar-index-coffee {
+.Apple {
   font-family: San Francisco Semibold;
-  top: 0;
-  left: 0;
-  right: 0;
   color: white;
   height: 22px;
   line-height: 22px;
   font-size: 15px;
+  /*
+    WIDGETS
+  */
 }
 
-#apebar-index-coffee > div > div {
+.Apple > div > div {
   display: inline-block;
   text-align: left;
   padding: 0 10px;
   -webkit-transform: translate3d(0, 0, 0);
 }
 
-#apebar-index-coffee .left {
+.Apple .left {
   padding-left: 15px;
   float: left;
 }
 
-#apebar-index-coffee .center {
+.Apple .center {
   position: absolute;
   width: 100%;
   text-align: center;
 }
 
-#apebar-index-coffee .right {
+.Apple .right {
   padding-right: 15px;
   float: right;
 }
 
-/*
-  WIDGETS
-*/
-#apebar-Battery .battery-icon {
+.Apple .widget-Battery .battery-icon {
   margin-right: 5px;
   height: 1.2em;
   vertical-align: sub;
   fill: var(--icon-color);
 }
 
-#apebar-Battery .percentage:after {
+.Apple .widget-Battery .percentage:after {
   content: "%";
 }
 
-#apebar-Spaces span {
+.Apple .widget-Spaces span {
   display: inline-block;
   width: 22px;
   height: 22px;
   text-align: center;
 }
 
-#apebar-Spaces span.current {
+.Apple .widget-Spaces span.current {
   color: black;
   background: white;
 }
 
-#apebar-CurrentApplication {
+.Apple .widget-CurrentApplication {
   font-family: San Francisco;
 }
 
-#apebar-CurrentApplication .window-application {
+.Apple .widget-CurrentApplication .window-application {
   font-weight: bold;
 }
 
-#apebar-CurrentApplication .window-application:after {
+.Apple .widget-CurrentApplication .window-application:after {
   margin: 0 8px;
   content: '•';
 }

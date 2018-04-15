@@ -51,11 +51,11 @@ module.exports = class CurrentApplication extends Widget
 
   render: ->
     """
-    <div id="apebar-#{@name}">
+    <div class="widget-#{@name}">
       <span class="window-application">#{@value.windowApplication}</span><span class="window-title">#{@value.windowTitle}</span>
     </div>
     """
 
-  update: ->
-    $("#apebar-#{@name} .window-application").html @value.windowApplication
-    $("#apebar-#{@name} .window-title").html @value.windowTitle
+  update: (domEl) ->
+    $(domEl).find(".widget-#{@name} .window-application").html @value.windowApplication
+    $(domEl).find(".widget-#{@name} .window-title").html @value.windowTitle

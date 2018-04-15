@@ -4,75 +4,75 @@
   --icon-color: #FFF;
 }
 
-#apebar-index-coffee {
+.Pecan {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial;
   color: var(--text-color);
   height: 35px;
   line-height: 35px;
   font-size: 19px;
+  /*
+    WIDGETS
+  */
 }
 
-#apebar-index-coffee > .position > div {
+.Pecan > .position > div {
   display: inline-block;
   padding: 0 10px;
   -webkit-transform: translate3d(0, 0, 0);
 }
 
-#apebar-index-coffee > .position > div:before,
-#apebar-index-coffee > .position > div span:before {
+.Pecan > .position > div:before,
+.Pecan > .position > div span:before {
   color: var(--icon-color);
 }
 
-#apebar-index-coffee .left {
+.Pecan .left {
   float: left;
 }
 
-#apebar-index-coffee .center {
+.Pecan .center {
   position: absolute;
   width: 100%;
   text-align: center;
 }
 
-#apebar-index-coffee .right {
+.Pecan .right {
   float: right;
 }
 
-/*
-  WIDGETS
-*/
-#apebar-Spaces span {
+.Pecan .widget-Spaces span {
   display: inline-block;
   width: 25px;
   height: 35px;
   text-align: center;
 }
 
-#apebar-Spaces span.current {
+.Pecan .widget-Spaces span.current {
   color: black;
   background: rgba(255, 255, 255, 0.9);
 }
 
-#apebar-CurrentApplication .window-application {
+.Pecan .widget-CurrentApplication .window-application {
   font-weight: bold;
 }
 
-#apebar-CurrentApplication .window-application:after {
+.Pecan .widget-CurrentApplication .window-application:after {
   margin: 0 8px;
   content: '•';
 }
 
-#apebar-Battery .battery-icon {
+.Pecan .widget-Battery .battery-icon {
   margin-right: 5px;
   height: 1.2em;
   vertical-align: sub;
   fill: var(--icon-color);
 }
 
-#apebar-Battery .percentage:after {
+.Pecan .widget-Battery .percentage:after {
   content: "%";
 }
 
-#apebar-Cpu svg {
+.Pecan .widget-Cpu svg {
   height: 1.2em;
   fill: white;
   margin-right: 5px;
@@ -80,42 +80,42 @@
   top: 3px;
 }
 
-#apebar-Cpu .percentage {
+.Pecan .widget-Cpu .percentage {
   display: inline-block;
   min-width: 60px;
 }
 
-#apebar-Cpu .percentage:after {
+.Pecan .widget-Cpu .percentage:after {
   content: "%";
 }
 
-#apebar-Bandwidth .down:before,
-#apebar-Bandwidth .up:before {
+.Pecan .widget-Bandwidth .down:before,
+.Pecan .widget-Bandwidth .up:before {
   font-family: 'Font Awesome 5 Free';
   margin-right: 10px;
   line-height: 1em;
 }
 
-#apebar-Bandwidth .down {
+.Pecan .widget-Bandwidth .down {
   display: inline-block;
   margin-right: 9px;
   min-width: 100px;
 }
 
-#apebar-Bandwidth .down:before {
+.Pecan .widget-Bandwidth .down:before {
   content: "\f063";
 }
 
-#apebar-Bandwidth .up {
+.Pecan .widget-Bandwidth .up {
   display: inline-block;
   min-width: 100px;
 }
 
-#apebar-Bandwidth .up:before {
+.Pecan .widget-Bandwidth .up:before {
   content: "\f062";
 }
 
-#apebar-Memory svg {
+.Pecan .widget-Memory svg {
   height: 1.1em;
   fill: white;
   margin-right: 5px;
@@ -123,11 +123,11 @@
   top: 2px;
 }
 
-#apebar-Memory:after {
+.Pecan .widget-Memory:after {
   content: "%";
 }
 
-#apebar-Wifi:before {
+.Pecan .widget-Wifi:before {
   font-family: 'Font Awesome 5 Free';
   content: "\f1eb";
   margin-right: 10px;

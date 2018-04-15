@@ -57,11 +57,11 @@ module.exports = class Bandwidth extends Widget
 
   render: ->
     """
-    <div id="apebar-#{@name}">
+    <div class="widget-#{@name}">
       <span class="down">#{@value.down}</span><span class="up">#{@value.up}</span>
     </div>
     """
 
-  update: ->
-    $("#apebar-#{@name} .down").html @value.down
-    $("#apebar-#{@name} .up").html @value.up
+  update: (domEl) ->
+    $(domEl).find(".widget-#{@name} .down").html @value.down
+    $(domEl).find(".widget-#{@name} .up").html @value.up

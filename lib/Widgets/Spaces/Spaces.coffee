@@ -27,10 +27,10 @@ module.exports = class Spaces extends Widget
 
   render: ->
     """
-      <div id="apebar-#{@name}"></div>
+      <div class="widget-#{@name}"></div>
     """
 
-  update: ->
+  update: (domEl) ->
     display_id = window.location.href.split("/").pop()
     output = ""
     if @displays[display_id]?
@@ -40,4 +40,4 @@ module.exports = class Spaces extends Widget
           classes.push "current"
         output += "<span class=\"#{classes.join " "}\">#{space}</span>"  
 
-    $("#apebar-#{@name}").html output
+    $(domEl).find(".widget-#{@name}").html output
