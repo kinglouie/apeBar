@@ -15,8 +15,18 @@ module.exports = class Pecan extends Theme
   right: 32
 
   render: ->
+    # run blurry
+    params = []
+    if @left?
+      params.push "--left #{@left}"
+    if @right?
+      params.push "--right #{@right}"
+    if @top?
+      params.push "--top #{@top}"
+    if @bottom?
+      params.push "--bottom #{@bottom}"
     displayId = window.location.href.split("/").pop()
-    run "apebar/assets/Blurry/backgroundrunner.sh --height 35 --top #{@top} --left #{@left} --right #{@right} --material 2 -c 3 --display #{displayId}", ->
+    run "apebar/assets/Blurry/backgroundrunner.sh --height 35 #{params.join " "} --material 2 -c 3 --display #{displayId}", ->
     positionsHtml =
       left: ""
       center: ""

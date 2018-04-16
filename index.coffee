@@ -25,7 +25,7 @@ init: ->
     if apebar.typeIsArray barsConfiguration
       for barCfg in barsConfiguration
         bars.push new themes[barCfg.theme](barCfg)
-    else 
+    else
       bars.push new themes[barsConfiguration.theme](barsConfiguration)
 
     @initialized = true

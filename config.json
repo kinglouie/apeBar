@@ -11,8 +11,10 @@
     },
     {
       "theme": "Pecan",
-      "top": null,
-      "bottom": 32,
+      "position": {
+        "top": null,
+        "bottom": 32
+      },
       "widgets": {
         "left": [
           "Bandwidth"
@@ -21,7 +23,6 @@
   
         ],
         "right": [
-          
           "Cpu", 
           "Memory", 
           "Battery"

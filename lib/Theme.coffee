@@ -29,14 +29,15 @@ module.exports = class Theme
 
     @init()
 
-    if "top" of @cfg
-      @top = @cfg.top
-    if "left" of @cfg
-      @left = @cfg.left
-    if "bottom" of @cfg
-      @bottom = @cfg.bottom
-    if "right" of @cfg
-      @right = @cfg.right
+    if "position" of @cfg
+      if "top" of @cfg.position
+        @top = @cfg.position.top
+      if "left" of @cfg.position
+        @left = @cfg.position.left
+      if "bottom" of @cfg.position
+        @bottom = @cfg.position.bottom
+      if "right" of @cfg.position
+        @right = @cfg.position.right
 
   init: ->
 

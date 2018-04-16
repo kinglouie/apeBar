@@ -10,8 +10,18 @@ Theme = require '../../Theme.coffee'
 module.exports = class Apple extends Theme
 
   render: ->
+    # run blurry
+    params = []
+    if @left?
+      params.push "--left #{@left}"
+    if @right?
+      params.push "--right #{@right}"
+    if @top?
+      params.push "--top #{@top}"
+    if @bottom?
+      params.push "--bottom #{@bottom}"
     displayId = window.location.href.split("/").pop()
-    run "apebar/assets/Blurry/backgroundrunner.sh --height 22 --top 0 --left 0 --right 0 --material 9 --display #{displayId}", ->
+    run "apebar/assets/Blurry/backgroundrunner.sh --height 22 #{params.join " "} --material 9 --display #{displayId}", ->
     positionsHtml =
       left: ""
       center: ""
